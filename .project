@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/wecom.WAV</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Documents/wecom.WAV</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>
