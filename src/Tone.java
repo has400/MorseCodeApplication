@@ -1,28 +1,11 @@
+import java.util.ArrayList;
+
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.LineUnavailableException;
 
-import java.awt.BorderLayout;
-import java.awt.Toolkit;
-import java.awt.Image;
 
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JSlider;
-import javax.swing.JCheckBox;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-
-import javax.swing.border.TitledBorder;
-
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Tone {
 
@@ -61,14 +44,14 @@ public class Tone {
 		sdl.close();
 	}
 
-	static int oneunit = 70;
+	static int oneunit = 100;
 
 	public static void dot() throws LineUnavailableException {
 		generateTone(590, oneunit, (int) (50 * 1.28));
 	}
 
 	public static void dash() throws LineUnavailableException {
-		generateTone(590, oneunit * 3, (int) (50 * 1.28));
+		generateTone(590, oneunit * 5, (int) (50 * 1.28));
 	}
 
 	public static void SoundOutput(char c) throws LineUnavailableException {
@@ -89,22 +72,19 @@ public class Tone {
 		
 		}
 	}
-
-	public static void main(String[] args) throws LineUnavailableException, InterruptedException {
-
-		ArrayList<Character> test = new ArrayList<Character>();
-		Scanner aa = new Scanner(System.in);
-		String str = aa.nextLine();
-		for (int i = 0; i < str.length(); i++) {
-			test.add(str.charAt(i));
+	public static void input(String input) throws LineUnavailableException, InterruptedException{
+		ArrayList<Character> charList = new ArrayList<Character>();
+		
+		
+		for (int i = 0; i < input.length(); i++) {
+			charList.add(input.charAt(i));
 			
-			if (str.charAt(i) == ' '){
+			if (input.charAt(i) == ' '){
 				System.out.println(System.getProperty("line.separator"));
 				Thread.sleep(2000);
 			}
 			
-			SoundOutput(str.charAt(i));
+			SoundOutput(input.charAt(i));
 		}
-		aa.close();
 	}
 }
